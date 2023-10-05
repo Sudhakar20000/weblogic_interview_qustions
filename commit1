@@ -29,31 +29,321 @@ Hypertext Transfer Protocol Secure (HTTPS) is a protocol that secures communicat
 
 9.How HTTPS is working?
 HTTPS occurs based upon the transmission of TLS/SSL certificates, which verify that a particular provider
+==================================================================================================================================================================================================================================================
+1. What is a WebLogic server and what purposes does it serve?
 
-10.Why WebLogic is a middleware?
+WebLogic server is an Oracle offering, a Java-based application server that can host Java-based applications. 
+Web applications and Enterprise applications that are developed can be deployed in a WebLogic server, to serve the business logic. 
+To put it in layman's words, with a WebLogic server we can easily deploy, distribute, run Java-based applications.
+
+2. What are the basic components of a WebLogic server?
+Following are the basic components of a WebLogic server:
+    Domains
+    Node Manager
+    Admin server
+    Managed server
+    WebLogic server cluster
+
+3. What is a domain in a WebLogic server?
+Domains can be understood as that logical set of resources within the Oracle WebLogic server that individually constitutes a single unit. 
+A domain includes a special Oracle WebLogic Server instance called the Administration Server, from where you configure and manage all resources in that specific domain. 
+It can logically separate the kinds of environments, and also Organizational divisions.
+
+4. Is WebLogic an Application server or a Web server?
+WebLogic is more of an Application server that can host both Web applications and Enterprise applications (such as EJBs).
+Hosting Enterprise Applications (such as .ear files) can only be done via Application servers such as WebLogic, JBoss, or WebSphere rather than Tomcat or such.
+
+5. What are the various thread states in a WebLogic server?
+Following are the various thread states in a WebLogic server:
+    STUCK
+    HOGGER
+    ACTIVE
+    STANDBY
+    IDLE
+Want to enhance your skills to become a master in WebLogic, enroll in our WebLogic Training program
+
+6. What are the supported installation modes available for WebLogic?
+WebLogic installation can happen via 3 different modes:
+Console mode: This installation mode is based on interactive text messages.
+Graphical mode: This installation mode is based on the interactive GUI.
+Silent mode: This installation mode is based on the properties file that is provided with it, which doesn’t require any interaction as such.
+
+7. What is the difference between the stage and the non-stage deployments?
+Stage deployment can be understood as the process where the Admin gets a copy which is later on distributed amongst the available instances. 
+Whereas the Non-Stage deployment has a restriction that each instance needs to contact the source for the necessary deployments.
+
+8. In how many ways can we provide credentials to start the WebLogic server?
+Command-line: During the creation of a domain, details like the username and password are prompted via a wizard to configure.
+Via boot.properties file: If a domain is already created in Development mode, then the encrypted credentials are stored in an identity file. 
+The password can then be entered if this identity file isn’t available during the boot-up process.
+Java Option: On a new boot, we can create a new identity file with the credentials or if there’s a requirement to create a new domain in Production mode.
+
+9. What are the various ways in which we can start/stop a WebLogic server?
+There are many ways by which WebLogic server services can be started or stopped. They are listed as follows:
+    Using command java WebLogic.server
+    From Windows services
+    Using scripts
+    WLST with or without Node Managers
+
+10. How do we determine the version of the WebLogic server?
+On the WebLogic Server console, click on Environment -> Servers -> Monitoring -> WebLogic Version field, to check the version of the WebLogic server.
+
+11. How do you set a CLASSPATH in a WebLogic server?
+You can use the script files from WebLogic to set CLASSPATH for the requirements. 
+These are the files that we have to use based on the OS type (Windows or Linux):
+1. WL_HOME/server/bin/setWLSEnv.cmd for Windows
+2. WL_HOME/server/bin/setWLSEnv.sh for Linux
+
+12. What are the different ways used to deploy your applications in a WebLogic server?
+Following are the ways to deploy your applications into a WebLogic server:
+    Via Console
+    Via Auto-deployment
+    Via CLI (Command Line Interface) - WebLogic.deployer
+    Via ANT / WLST
+
+13. How do you turn off the auto-deployment feature in the WebLogic server?
+Auto deployment mode feature of WebLogic server works for the development mode, where it checks every 3 seconds to see if there are any new applications 
+available or any new changes available for the existing applications and deploys them. To disable the automatic deployment, these are the available options:
+1. Selecting the Production mode checkbox from the Administration Console for the necessary domain.
+2. On CLI, use option -Dweblogic.ProductionModeEnabled=true when starting the respective domain’s Administration Server.
+
+14. What is your understanding of BSU in the WebLogic server?
+WebLogic Smart Update or BEA Smart Update utility (BSU) is a utility available to update or apply patches on WebLogic Servers. It can be found under the following folder (WL_HOME/utils/bsu).
+
+15. What is an Administration server?
+Administration Server can be understood as the one-stop solution for all configuration in a given domain. 
+We can also monitor all the resources of a domain from the Administration server as well.
+
+16. How do we access the Admin console?
+You can access the WebLogic server’s admin console by entering the administration machine name and port in 
+the navigation bar of a browser. There you’ll be prompted to provide the login credentials.
+
+17. What is the default port of the WebLogic admin server?
+The default port of the WebLogic Admin server is 7001 and for SSL it is going to be 7002.
+
+18. What are Managed servers?
+Managed servers within a WebLogic server is that component that hosts the business applications, application components, 
+web services, and the other resources that are associated with these artifacts. In order to maintain the performance statistics, the domain’s configuration document is maintained as a read-only copy. 
+This is synchronized when the Managed server starts up connecting to the domain’s Administration Server.
+
+19. What are the different ways to configure a Managed server in the WebLogic server?
+The Managed servers can be configured in a WebLogic server in three different ways, which are as follows:
+1. WebLogic scripting tool
+2. Administration Console
+3. Domain Configuration wizard
+
+20. How do we start a Managed server when there isn’t an Administration server?
+When the WebLogic server’s Administration server is not available, then the Managed server goes into an independent mode to carry out its own set of operations. But as usual, the Managed server connects with the Administration server during its own startup and always maintains a read-only copy of the configuration file with itself.
+
+21. What is the boot.properties file in the WebLogic server? What is the importance of this file?
+The boot.properties file is available under domain/servers/<YOUR_SERVER_NAME>/security folder. 
+This file is used by both the Administration server and/or a Managed server to get the login credentials from it.
+
+22. What is config.xml in the WebLogic server?
+The config.xml is something like a centralized repository of all details that are required for a domain. 
+Each and every configuration that is made from any mode of connection would be registered in this file for common access. 
+WebLogic Server 9.x onwards, it also contains the references to other XML configuration files that are available under the domain/config folder.
+
+23. What is SSL in a WebLogic server?
+Secure Sockets Layer (SSL) provides a very well-secured connection allowing applications that connect over a network to authenticate in order 
+to identify each others’ identity. By authenticating so, it allows the Server and optionally the Client to verify its identity on a network connection. The data that gets transmitted between the server and client is encrypted which will only be for the intended recipients. 
+
+24. What is the MSI mode in the WebLogic server? How do we enable or disable this option?
+MSI stands for Managed Server Independence. A Manage Server can work independently when the Administration server is not available. 
+In order to start a Managed Server in the MSI mode, then you will have to perform the following:
+1. There should be a config subdirectory under the Managed server’s root directory.
+2. Start the Managed server from CLI (command line interface) or by using a script.
+You can enable or disable this by checking or unchecking the following checkbox:
+    Environment -> Servers -> YOUR_SERVER_NAME -> Tuning -> Advanced -> Managed Server Independence Enabled checkbox
+
+25. What is your understanding of the functionality of IIOP?
+IIOP is a protocol that helps with the communication between WebLogic servers and Object Request Brokers.
+
+26. What is the name of the default JVM which is used for a WebLogic server?
+The Sun HotSpot JDK is the default JVM that is available for development whereas JRockit is the JVM that is used for the production
+of WebLogic servers. Based on the OS that is being used, the choice of Certified JDK / JVM depends.
+
+27. How do we change the default JVM to another one?
+The process to change the default JVM to another one is as follows:
+1.Update the JAVA_HOME variable in the start script of the server
+2. Modify your config.xml of the domain to point it to JRockit javac.exe
+3. Check and modify accordingly to clip off any references to Sun JVM from the startup scripts.
+
+28. How do we create pooling within the Tomcat server?
+To create pooling in the Tomcat server, follow the steps mentioned below:
+1.Download and add these jars to the Tomcatlib folder - commons-dbcp-1.2jar, commons-pool-1.3.jar, commons-collections-3.1.jar.
+2. Provide an entry in the server.xml under the Tomcatconfig folder.
+
+29. What is Clustering? How does communication happen in a Cluster?
+The process of grouping a certain set of servers to attain high availability and scalability is called Clustering. 
+Communication within a Cluster happens via a multicast IP by sending periodic messages called Heartbeat messages.
+
+30. What are Horizontal and Vertical Clustering?
+Clustering can be done in two forms - Horizontal and the other one is Vertical.
+1. Vertical Clustering makes use of multiple Java Application servers on one Physical machine. The CPU usage, the Machine’s processing power, and the JVM heap memory are the main factors that help us decide how many instances should be run on one machine with Vertical Scaling. 
+2. Horizontal Clustering makes use of multiple Java Application servers on more than one Physical system. This is much more reliable than Vertical Clustering as there are many more machines than in the Cluster when compared to one machine in Vertical Clustering.
+
+31. How does a server know that another server is UNAVAILABLE in a cluster?
+There are two ways by which the WebLogic server makes a note of the participating server nodes’ availability:
+1. If a participating server node fails to emit 3 consecutive heartbeat messages, then the other server nodes consider that this server node is OFFLINE or UNAVAILABLE.
+2. If there are any kind of socket failures corresponding to a specific server node, then WebLogic considers that the server node where these socket failures are reported to be UNAVAILABLE.
+
+32. What are the advantages of Clustering?
+The three main advantages that WebLogic server clustering brings are as follows:
+High Availability:
+High Availability is achieved in the WebLogic server by a combination of the following features - Failover, Replication, and also with the migratable services. With these, we can use WebLogic seamlessly without worrying even when a participating node is down or unavailable.
+Load Balancing:
+All server nodes are distributed to receive requests, thereby load balancing is achieved in the WebLogic server.
+Scalability:
+We can add server instances without deteriorating or bringing down the applications - hence we can scale as per the request load. This doesn’t impact the clients.
+
+33. Why is the Node Manager required?
+Node Manager is a Java-based utility that comes in handy to perform some common operations for a given Managed server. 
+It runs as a totally different service than from the WebLogic server.
+
+34. How do stubs work in a WebLogic Server cluster?
+Stubs perform the removal of nodes from the WebLogic server cluster, whenever it identifies one. 
+DNS comes into the picture for the stubs to identify working server nodes and the list of available nodes gets updated periodically to keep the whole cluster available.
+
+35. What are Unicast and Multicast in a WebLogic server?
+Unicast: is an option by which a packet can be sent point to point, to a specific member but not to everyone. 
+This makes it much more like a private conversation between two specific members instead of a group chat or etc.
+Multicast: on the other hand, is more like a broadcast UDP option by which every member in the group is notified with the packet or announcement. 
+The defined range for Multicast addresses are 224.0.0.1 to 239.255.255.255, so the message that is announced is more like a common one and available for every member.
+
+36. How can you differentiate between a Server hang issue and a Server crash issue?
+A server crash can be understood as a situation where the JAVA process no longer exists. On the other hand, 
+A server hang issue is when the server doesn’t respond back with proper responses. In such a case, we can collect multiple sets of dumps from 
+the server and analyze the issue which is causing this lowered performance.
+
+37. What are the possible reasons for a server crash?
+Following could be the possible reasons for a server crash, though it is not limited to just these scenarios but the reasons can span much more than these:
+    Mismatch in the JDBC driver used
+    Unsupported configuration
+    SSL native libraries
+    JVM
+    Native IO related issues
+
+38. How do you analyze a server crash?
+A server crash always comes with a corresponding hs_err_pid file which contains the actual cause of the crash in the first place. 
+You can refer to this file and identify the cause of the issue and basis on that, we can take the next steps:
+1.If it is a driver related issue, reach out to the respective driver teams
+2.If it is related to the Native IO issue, kindly disable it and find an appropriate cause.
+
+39. How do you go about analyzing a server hang issue?
+A server hang issue is relatively different from a server crash, where there could be possibly different sets of reasons for it 
+to happen - lack of resources, unimaginable load, other parameters that affect the system, etc.
+Firstly we can use the following command to see if you get a good response:
+1.java Weblogic.admin ping
+2.Based on the outcome of this command, you can probably check for the cause of the issue.
+
+40. What are the possible causes of OUT OF MEMORY?
+There can possibly the following possibilities for an OUT OF MEMORY issue:
+    Heap size would’ve less compared to the load received
+    Resource leaks from the application code itself.
+    Any JVM bugs that alter the occurrence of a full GC
+    Placing of objects taking longer than that of a given HTTP session
+
+41. Differentiate between Sun JVM and the BEA JRockit JVM.
+Sun's implementation of the JVM is called the HotSpot and is also shipped in the JDK, JRE from Sun / Oracle. 
+BEA JRockit JVM is a custom implementation from BEA for reliability, performance for the server-side applications. For this to be achieved,
+BEA JRockit JVM uses hot spot detection, code generation, advanced garbage collection, tight OS integration.
+Tuning the JVM parameters:
+    If it is a single processor and a single thread machine, then you’ll have to use a single collector (enabled explicitly using -XX:+UseSerialGC).
+    If it is a multiprocessor machine, then you’ll have to use a parallel collector (enabled explicitly with -XX:+UseParallelGC).
+    If you choose to keep shorter GC pauses at the cost of using additional CPU time, then you’ll have to use a concurrent collector (enabled explicitly with the following -XX:+UseConcMarkSweepGC).
+
+42. How can one tune the performance of a WebLogic server?
+The performance of a WebLogic server can be done at 4 different levels, which are as follows:
+JVM Tuning:
+    Monitoring GC
+    Tuning GC strategy
+Core server Tuning:
+    Tune Chunk pool and Chunk size
+    By using performance packs
+    Tune Work manager
+    Connection backlog buffering
+OS Tuning:
+    Setting the TCP IP parameters such as tcp_conn_req_max_q and tcp_time_wait_interval.
+Application Tuning:
+    Pre-compile of JSPs
+    EJB pool size cache
+
+43. What is Core Server tuning?
+This is the process of tuning your WebLogic core server with the following parameters to consider - chunk pool, chunk size, tune work manager, connection backlog buffering, etc.
+
+44. Explain the different modes of the WebLogic server?
+There are two different modes in the WebLogic server - namely Development mode and Production mode. Differences between these modes are as follows:
+Development Mode	Production Mode
+Default JDK is Sun HotSpot	Default JDK is BEA JRockit
+Usage of demo certificates for SSL is allowed	Usage of demo certificates for SSL will throw warnings.
+Auto-deployment to ADMIN server (only) is enabled by default	Auto-deployment to ADMIN server (only) is disabled by default
+On startup, server instances rotate their log files	Server log files rotate when they reach a limit of 5MB
+ADMIN server uses an automatically created boot.properties file for the login credentials.	ADMIN server prompts for credentials during startup
+Default of maximum JDBC data sources is 15	Default of maximum JDBC data sources is 25
+The classLoader analysis tool, Web Service test client is available	The classLoader analysis tool, Web Service test client is not available
+Node Manager login credentials are the same as Admin Server credentials	Node Manager login credentials are randomly generated
+
+45. How do we switch from Development to Production mode in WebLogic 10.3?
+To switch from Development mode to Production mode, you’ll have to modify the PRODUCTION_MODE parameter in the setDomainEnv.cmd file available 
+under the $root_domain/bin folder. Set a value TRUE and save your changes and on a restart, the WebLogic server starts in Production mode.
+
+46. What is your understanding of WebLogic Cache Server?
+A WebLogic cache server (also known as a Reverse Proxy) helps speed up the Web traffic. The basic understanding is that the Web traffic can be graphic
+intensive and there is a definite need for caching the repetitive pages. If not done, then it might slow down the Web traffic.
+
+47. Why do we need to clear the WebLogic Cache? How do you achieve it?
+The need to clear the WebLogic Cache comes in when you go for a newer version deployment. 
+That is when we need to clear the WebLogic Cache.
+We can achieve this by the following means:
+    Removing these Cache folders manually after the WebLogic server is brought down gracefully.
+    Use the stage mode to no_stage deployment, by doing this the Cache gets cleared automatically whenever an application is undeployed.
+
+48. What is HTTP Tunneling? How do we configure it in a WebLogic server?
+HTTP Tunneling is the process by which you simulate stateful socket communication between your WebLogic server and 
+the corresponding Java Clients, where the requirements demand only the usage of the HTTP protocol. This is generally used to tunnel 
+through an HTTP port under a security firewall. Though HTTP is a stateless protocol, the WebLogic server facilitates the HTTP 
+tunneling feature to mask a connection to appear as if it was a T3Connection.
+To enable HTTP Tunneling in the WebLogic Server, the following has to be done:
+    Click on the Protocols tab -> General -> click to check the checkbox Enable Tunneling.
+ Explore  WebLogic Sample Resumes Download & Edit, Get Noticed by Top Employers!  
+
+49. What are the differences between T3 and the HTTP protocol?
+WebLogic makes use of the T3 protocols for both internal and external communications. 
+T3 protocol is used in WebLogic's own implementation of RMI (Remote method invocation). On the other hand, 
+HTTP protocol is used for all communications between the browser and a Web server as per the W3C standards.
+
+50. What is your understanding of the various error codes within the WebLogic server?
+The error codes within WebLogic Server range from BEA-000001 to BEA-2163006. The types of errors that these mentions are classified as below:
+1. INTERNAL_ERROR
+2. ERROR
+3. NOTIFICATION
+4. WARNING
+
+51.Why WebLogic is a middleware?
 WebLogic servers are called middleware or application servers. They are called 
 so as they act as a middle layer between the front end user interface and the backend database.
 
-11.What is the heap memory setting for WebLogic?
+52.What is the heap memory setting for WebLogic?
 The default JVM heap size for WebLogic is 3GB. The size is set in the setDomainEnv.sh file for Linux or setDomainEnv. cmd for Windows,
 which is in the $DOMAIN_HOME/bin directory.
 
-12.What is called heap memory?
+53.What is called heap memory?
 Heaps are memory areas allocated to each program.
 Memory allocated to heaps can be dynamically allocated, unlike memory allocated to stacks. 
 
-13.What is heap memory in server?
+54.What is heap memory in server?
 Heap memory is a part of memory allocated to JVM, which is shared by all executing threads in the application.
 
-14.What is the JVM?
+55.What is the JVM?
 A Java Virtual Machine (JVM) is a program that interprets Java bytecode to run as a program by providing a runtime environment 
 that executes this process. 
 
-15.What is the WebLogic server?
+56.What is the WebLogic server?
 WebLogic Server Application Architecture.
 WebLogic Server is an application server: a platform for developing and deploying multitier distributed enterprise applications. 
 
-16.What is the default JVM used for WebLogic?
+57.What is the default JVM used for WebLogic?
 What is the name of the default JVM which is used for a WebLogic server? 
 The SunHotSpot JDK is the default JVM that is available for development whereas JRockit is 
 the JVM that is used for the production of WebLogic servers.
