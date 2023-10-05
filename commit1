@@ -1,0 +1,50 @@
+1.What is a port? 
+A port is a virtual point where network connections start and end. Ports are software-based and managed by a computer's operating system. 
+Each port is associated with a specific process or service.
+
+2.what is ip address in networking
+An Internet Protocol (IP) address is the unique identifying number assigned to every device connected to the internet.
+An IP address definition is a numeric label assigned to devices that use the internet to communicate.
+
+3.what is context root in weblogic?
+A web application is rooted at a specific path within the web server, called the context root.
+
+4.difference between application server and web server
+Web servers deliver static content, like HTML pages, images, videos, and files.
+Application servers deliver dynamic content, like real-time updates, personalized information, and customer support.
+
+5.What is a server? 
+A server is a computer or system that provides resources, data, services, or programs to other computers, known as clients, over a network. 
+
+6.What is a host in a network?
+A host is any hardware device that has the capability of permitting access to a network via a user interface, 
+specialized software, network address, protocol stack, or any other means
+
+7.What is the HTTP protocols?
+HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers 
+of the network protocol stack
+
+8.What is HTTPS protocol used for?
+Hypertext Transfer Protocol Secure (HTTPS) is a protocol that secures communication and data transfer between a user's web browser and a website
+
+9.How HTTPS is working?
+HTTPS occurs based upon the transmission of TLS/SSL certificates, which verify that a particular provider
+
+10.Why WebLogic is a middleware?
+WebLogic servers are called middleware or application servers. They are called 
+so as they act as a middle layer between the front end user interface and the backend database.
+
+11.What is the heap memory setting for WebLogic?
+The default JVM heap size for WebLogic is 3GB. The size is set in the setDomainEnv.sh file for Linux or setDomainEnv. cmd for Windows,
+which is in the $DOMAIN_HOME/bin directory.
+
+12.What is called heap memory?
+Heaps are memory areas allocated to each program.
+Memory allocated to heaps can be dynamically allocated, unlike memory allocated to stacks. 
+
+13.What is heap memory in server?
+Heap memory is a part of memory allocated to JVM, which is shared by all executing threads in the application.
+
+14.What is the JVM?
+A Java Virtual Machine (JVM) is a program that interprets Java bytecode to run as a program by providing a runtime environment 
+that executes this process. 
