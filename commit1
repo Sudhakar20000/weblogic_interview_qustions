@@ -48,3 +48,14 @@ Heap memory is a part of memory allocated to JVM, which is shared by all executi
 14.What is the JVM?
 A Java Virtual Machine (JVM) is a program that interprets Java bytecode to run as a program by providing a runtime environment 
 that executes this process. 
+
+15.What is the WebLogic server?
+WebLogic Server Application Architecture.
+WebLogic Server is an application server: a platform for developing and deploying multitier distributed enterprise applications. 
+
+16.What is the default JVM used for WebLogic?
+What is the name of the default JVM which is used for a WebLogic server? 
+The SunHotSpot JDK is the default JVM that is available for development whereas JRockit is 
+the JVM that is used for the production of WebLogic servers.
+
+
