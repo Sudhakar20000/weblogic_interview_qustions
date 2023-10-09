@@ -29,6 +29,16 @@ Hypertext Transfer Protocol Secure (HTTPS) is a protocol that secures communicat
 
 9.How HTTPS is working?
 HTTPS occurs based upon the transmission of TLS/SSL certificates, which verify that a particular provider
+
+10.what is thread
+thread is a unit of execution that can perform a single task or set of tasks within an application server. Threads are used to handle multiple
+requests from clients simultaneously, allowing the application server to handle a large number of requests and provide better scalability.
+
+11.difference between a process and a thread
+The basic difference between a process and a thread is that a process takes place in different memory spaces, 
+whereas a thread executes in the same memory space
+
+12.
 ==================================================================================================================================================================================================================================================
 1. What is a WebLogic server and what purposes does it serve?
 
