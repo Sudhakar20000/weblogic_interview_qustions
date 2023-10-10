@@ -38,7 +38,39 @@ requests from clients simultaneously, allowing the application server to handle 
 The basic difference between a process and a thread is that a process takes place in different memory spaces, 
 whereas a thread executes in the same memory space
 
-12.
+12.what’s the function of T3 in WebLogic Server?
+T3 is the protocol used to transport information between WebLogic servers and other types of Java programs. WebLogic keeps track of every 
+Java virtual machine connected to the application.To carry traffic to the Java virtual machine, WebLogic creates a single T3 connection
+
+13.what’s Multicast And Unicast In Weblogic?
+WebLogic Server supports two cluster messaging protocols:
+Multicast: This protocol relies on UDP(User Datagram Protocol) multicast and has been supported in WebLogic Server clusters since WebLogic Server 
+Unicast: This protocol relies on point-to-point TCP/IP sockets and was added in WebLogic Server
+
+14. we frequently see BSU when using WebLogic. what’s the meaning of BSU?
+BSU Stands for Bea Smart Update. This utility is used to apply the WebLogic Server Patches
+$MW_HOME/utils/bsu/bsu.sh or bsu.cmd.
+
+15.What is LDAP and why it is used?
+Lightweight directory access protocol (LDAP) is a protocol  The Oracle WebLogic Server domain includes an embedded  (LDAP) server that acts as 
+the default security provider data store for the Default Authentication, Authorization, Credential Mapping, and Role Mapping providers.
+LDAP has two main goals: to store data in the LDAP directory and authenticate users to access the directory
+
+16.What is the difference between DN and RDN in LDAP?
+The LDAP API references an LDAP object by its distinguished name (DN). A DN is a sequence of relative distinguished names (RDN) connected by commas. 
+RDN: is an attribute with an associated value in the form attribute=value; normally expressed in a UTF-8 string format.
+This is a technique of linking DNs while specifying their relative location. 
+
+17.What Is Active Directory?
+Active Directory is a Microsoft product that is used to organise information technology assets such as users, computers, and printers.
+The active directory centralises information about all the people, computers, and other assets in the organisation. Also it stores credentials 
+(such as your username and password) in order to authenticate you to all of the applications you are using. 
+Domains: Users (such as employees) and devices (such as computers)
+Trees: Trees define the trust between domains, deciding who can access what in different parts of an organization
+Forests: For large organizations or intercompany relationships, domains are grouped into forests.
+
+18.define OLTP or Online Transaction Processing
+is a type of data processing that consists of executing a number of transactions occurring concurrently—online banking, shopping.
 ==================================================================================================================================================================================================================================================
 1. What is a WebLogic server and what purposes does it serve?
 
