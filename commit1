@@ -164,9 +164,8 @@ the navigation bar of a browser. There you’ll be prompted to provide the login
 The default port of the WebLogic Admin server is 7001 and for SSL it is going to be 7002.
 
 18. What are Managed servers?
-Managed servers within a WebLogic server is that component that hosts the business applications, application components, 
-web services, and the other resources that are associated with these artifacts. In order to maintain the performance statistics, the domain’s configuration document is maintained as a read-only copy. 
-This is synchronized when the Managed server starts up connecting to the domain’s Administration Server.
+Managed Server is an instance of your WebLogic server that is running on JVM and has its own configuration.
+In a Managed server, we will deploy the java components i.e Web Applications, EJB Applications, JMS Applications and Web services.
 
 19. What are the different ways to configure a Managed server in the WebLogic server?
 The Managed servers can be configured in a WebLogic server in three different ways, which are as follows:
