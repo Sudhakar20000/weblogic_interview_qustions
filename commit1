@@ -71,6 +71,14 @@ Forests: For large organizations or intercompany relationships, domains are grou
 
 18.define OLTP or Online Transaction Processing
 is a type of data processing that consists of executing a number of transactions occurring concurrently—online banking, shopping.
+
+19.what is thread dump in weblogic?
+Prints a snapshot of the WebLogic Server threads that are currently running for a specific server instance
+A thread dump reveals information about an application’s thread activity that can help you diagnose problems and better optimize application and JVM performance
+
+20.What is the purpose of the heap Dump
+A heap dump is a snapshot of all the objects that are in memory in the JVM at a certain moment. 
+They are very useful to troubleshoot memory-leak problems and optimize memory usage in Java applications.
 ==================================================================================================================================================================================================================================================
 1. What is a WebLogic server and what purposes does it serve?
 
