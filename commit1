@@ -83,6 +83,22 @@ They are very useful to troubleshoot memory-leak problems and optimize memory us
 21.what is cache in weblogic server?
 The Image Tool maintains a local file cache store. This store is used to look up where the Java, WebLogic Server installers,
 and WebLogic Server patches reside in the local file system. By default, the cache store is located in the user's $HOME/cache directory.
+
+22.whhat is JMS?
+The Java Message Service is a messaging standard that allows application components based on the Java Platform Enterprise Edition (Java EE) to create, 
+send, receive, and read messages. It enables distributed communication that is loosely coupled, reliable, and asynchronous.
+
+23.what is JDBC?
+Java database connectivity (JDBC) is the JavaSoft specification of a standard application programming interface (API) that allows Java programs to access 
+database management systems. The JDBC API consists of a set of interfaces and classes written in the Java programming language.
+
+24.what is Data Source
+A Data Source object provides a way for a JDBC client to obtain a database connection from a connection pool. It is used to store the WLST JNDI tree, 
+it can support transactions and it is also associated with the connection pool.
+
+25.Connection Pool
+A connection pool is a collection of database connections that is maintained by memory. That can be reused. Once an application has finished its physical 
+connection the connection is recycled rather than beginning destroyed.
 ==================================================================================================================================================================================================================================================
 1. What is a WebLogic server and what purposes does it serve?
 
