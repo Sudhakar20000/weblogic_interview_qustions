@@ -209,7 +209,7 @@ In order to start a Managed Server in the MSI mode, then you will have to perfor
 You can enable or disable this by checking or unchecking the following checkbox:
     Environment -> Servers -> YOUR_SERVER_NAME -> Tuning -> Advanced -> Managed Server Independence Enabled checkbox
 
-25. What is your understanding of the functionality of IIOP?
+25. What is your understanding of the functionality of IIOP(Internet Inter-ORB Protocol)?
 IIOP is a protocol that helps with the communication between WebLogic servers and Object Request Brokers.
 
 26. What is the name of the default JVM which is used for a WebLogic server?
@@ -233,13 +233,16 @@ Communication within a Cluster happens via a multicast IP by sending periodic me
 
 30. What are Horizontal and Vertical Clustering?
 Clustering can be done in two forms - Horizontal and the other one is Vertical.
-1. Vertical Clustering makes use of multiple Java Application servers on one Physical machine. The CPU usage, the Machine’s processing power, and the JVM heap memory are the main factors that help us decide how many instances should be run on one machine with Vertical Scaling. 
-2. Horizontal Clustering makes use of multiple Java Application servers on more than one Physical system. This is much more reliable than Vertical Clustering as there are many more machines than in the Cluster when compared to one machine in Vertical Clustering.
+1. Vertical Clustering makes use of multiple Java Application servers on one Physical machine. The CPU usage, the Machine’s processing power,
+and the JVM heap memory are the main factors that help us decide how many instances should be run on one machine with Vertical Scaling. 
+2. Horizontal Clustering makes use of multiple Java Application servers on more than one Physical system. This is much more reliable than Vertical Clustering 
+as there are many more machines than in the Cluster when compared to one machine in Vertical Clustering.
 
 31. How does a server know that another server is UNAVAILABLE in a cluster?
 There are two ways by which the WebLogic server makes a note of the participating server nodes’ availability:
 1. If a participating server node fails to emit 3 consecutive heartbeat messages, then the other server nodes consider that this server node is OFFLINE or UNAVAILABLE.
 2. If there are any kind of socket failures corresponding to a specific server node, then WebLogic considers that the server node where these socket failures are reported to be UNAVAILABLE.
+NOTE: SOCKET:A socket is one end-point of a two-way communication link between two programs running on the network.
 
 32. What are the advantages of Clustering?
 The three main advantages that WebLogic server clustering brings are as follows:
@@ -255,8 +258,10 @@ Node Manager is a Java-based utility that comes in handy to perform some common 
 It runs as a totally different service than from the WebLogic server.
 
 34. How do stubs work in a WebLogic Server cluster?
-Stubs perform the removal of nodes from the WebLogic server cluster, whenever it identifies one. 
-DNS comes into the picture for the stubs to identify working server nodes and the list of available nodes gets updated periodically to keep the whole cluster available.
+Stubs perform the removal of nodes from the WebLogic server cluster, whenever it identifies one.  Domain Name Service(DNS) comes into the picture for the stubs
+to identify working server nodes and the list of available nodes gets updated periodically to keep the whole cluster available.
+NOTE: stub: This stub contains the list of available server instances that host implementations of the object.
+The stub also contains the load balancing logic for distributing the load among its host servers.
 
 35. What are Unicast and Multicast in a WebLogic server?
 Unicast: is an option by which a packet can be sent point to point, to a specific member but not to everyone. 
@@ -309,33 +314,34 @@ Tuning the JVM parameters:
 42. How can one tune the performance of a WebLogic server?
 The performance of a WebLogic server can be done at 4 different levels, which are as follows:
 JVM Tuning:
-    Monitoring GC
+    Monitoring GC (Garbage collection)
     Tuning GC strategy
 Core server Tuning:
     Tune Chunk pool and Chunk size
     By using performance packs
-    Tune Work manager
-    Connection backlog buffering
+    Tune Work manager: You tune the thread utilization of a server instance by defining rules and constraints for your application by defining a Work Manage
+    Connection backlog buffering: You can tune the number of connection requests that a WebLogic Server instance will accept before refusing additional requests.
 OS Tuning:
     Setting the TCP IP parameters such as tcp_conn_req_max_q and tcp_time_wait_interval.
 Application Tuning:
-    Pre-compile of JSPs
-    EJB pool size cache
+    Pre-compile of JSPs (Java Server Pages)
+    EJB (Enterprise JavaBeans) pool size cache
 
 43. What is Core Server tuning?
 This is the process of tuning your WebLogic core server with the following parameters to consider - chunk pool, chunk size, tune work manager, connection backlog buffering, etc.
 
 44. Explain the different modes of the WebLogic server?
 There are two different modes in the WebLogic server - namely Development mode and Production mode. Differences between these modes are as follows:
-Development Mode	Production Mode
-Default JDK is Sun HotSpot	Default JDK is BEA JRockit
-Usage of demo certificates for SSL is allowed	Usage of demo certificates for SSL will throw warnings.
-Auto-deployment to ADMIN server (only) is enabled by default	Auto-deployment to ADMIN server (only) is disabled by default
-On startup, server instances rotate their log files	Server log files rotate when they reach a limit of 5MB
-ADMIN server uses an automatically created boot.properties file for the login credentials.	ADMIN server prompts for credentials during startup
-Default of maximum JDBC data sources is 15	Default of maximum JDBC data sources is 25
-The classLoader analysis tool, Web Service test client is available	The classLoader analysis tool, Web Service test client is not available
-Node Manager login credentials are the same as Admin Server credentials	Node Manager login credentials are randomly generated
+Development Mode	                                                                                      Production Mode
+Default JDK is Sun HotSpot	                                                                     Default JDK is BEA JRockit
+Usage of demo certificates for SSL is allowed                                               	Usage of demo certificates for SSL will throw warnings.
+Auto-deployment to ADMIN server (only) is enabled by default	                             Auto-deployment to ADMIN server (only) is disabled by default
+On startup, server instances rotate their log files	                                        Server log files rotate when they reach a limit of 5MB
+ADMIN server uses an automatically created boot.properties file for the login credentials.	   ADMIN server prompts for credentials during startup
+Default of maximum JDBC data sources is 15	                                                Default of maximum JDBC data sources is 25
+The classLoader analysis tool, Web Service test client is available                  	The classLoader analysis tool, Web Service test client is not available
+Node Manager login credentials are the same as Admin Server credentials                 	Node Manager login credentials are randomly generated
+NOTE:A classloader is used by the JVM to locate and load Java classes into memory at runtime.
 
 45. How do we switch from Development to Production mode in WebLogic 10.3?
 To switch from Development mode to Production mode, you’ll have to modify the PRODUCTION_MODE parameter in the setDomainEnv.cmd file available 
@@ -353,10 +359,9 @@ We can achieve this by the following means:
     Use the stage mode to no_stage deployment, by doing this the Cache gets cleared automatically whenever an application is undeployed.
 
 48. What is HTTP Tunneling? How do we configure it in a WebLogic server?
-HTTP Tunneling is the process by which you simulate stateful socket communication between your WebLogic server and 
-the corresponding Java Clients, where the requirements demand only the usage of the HTTP protocol. This is generally used to tunnel 
-through an HTTP port under a security firewall. Though HTTP is a stateless protocol, the WebLogic server facilitates the HTTP 
-tunneling feature to mask a connection to appear as if it was a T3Connection.
+HTTP tunneling is a technique used to encapsulate non-HTTP network protocols within an HTTP protocol. This allows non-HTTP traffic to traverse network
+infrastructure, such as proxies and firewalls, which may otherwise block or restrict it. HTTP tunneling is primarily used to enable
+communication between a client and a server when the standard network protocols are not allowed or supported.
 To enable HTTP Tunneling in the WebLogic Server, the following has to be done:
     Click on the Protocols tab -> General -> click to check the checkbox Enable Tunneling.
  Explore  WebLogic Sample Resumes Download & Edit, Get Noticed by Top Employers!  
