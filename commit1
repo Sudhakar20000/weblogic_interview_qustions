@@ -99,6 +99,12 @@ it can support transactions and it is also associated with the connection pool.
 25.Connection Pool
 A connection pool is a collection of database connections that is maintained by memory. That can be reused. Once an application has finished its physical 
 connection the connection is recycled rather than beginning destroyed.
+
+26.What is JNDI?
+JNDI: Java Naming and Directory Interface
+Lookup Service: Applications use naming services to locate objects in data sources, EJBs, JMS, Mail Sessions, and so on in the network.
+A naming service associates names with objects and finds objects based on their given names.
+
 ==================================================================================================================================================================================================================================================
 1. What is a WebLogic server and what purposes does it serve?
 
