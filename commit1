@@ -95,6 +95,7 @@ database management systems. The JDBC API consists of a set of interfaces and cl
 24.what is Data Source
 A Data Source object provides a way for a JDBC client to obtain a database connection from a connection pool. It is used to store the WLST JNDI tree, 
 it can support transactions and it is also associated with the connection pool.
+A data source is a pool of database connections that are created when the data source instance is created
 
 25.Connection Pool
 A connection pool is a collection of database connections that is maintained by memory. That can be reused. Once an application has finished its physical 
