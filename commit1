@@ -429,4 +429,30 @@ What is the name of the default JVM which is used for a WebLogic server?
 The SunHotSpot JDK is the default JVM that is available for development whereas JRockit is 
 the JVM that is used for the production of WebLogic servers.
 
+==========
+oracle
+==========. 
+server: A server is an instance of WebLogic Server that runs in its own Java Virtual Machine (JVM) and has its own configuration.
+
+cluster:  A cluster is a deployment in which multiple WebLogic Server instances (servers) run simultaneously and work together to 
+provide increased scalability and reliability. A cluster appears to clients to be a single WebLogic Server instance. The servers 
+that constitute a cluster can run on the same machine, or be located on different machines. 
+
+Vertical Clustering: The servers that are members of a cluster can be located on the same host computer and node
+Horizontal Clustering: The servers that are members of a cluster can be located on different host computers and nodes.
+
+machines: A machine is the logical representation of the computer that hosts one or more WebLogic Server instances (servers). 
+
+JMS: An enterprise messaging system, also referred to as message-oriented middleware (MOM), enables applications to communicate
+with one another through the exchange of messages. A message is a request, report, and/or event that contains information needed 
+to coordinate communication between different applications. A message provides a level of abstraction, allowing you to separate
+the details about the destination system from the application code.
+
+JDBC :Java Database Connectivity (JDBC) is a standard Java API that consists of a set of classes and interfaces written in the Java 
+programming language. Application, tool, and database developers use JDBC to write database applications and execute SQL statements.
+JDBC is a low-level interface, which means that you use it to invoke (or call) SQL commands directly. In addition, JDBC is a base upon 
+which to build higher-level interfaces and tools, such as Java Message Service (JMS) and Enterprise Java Beans (EJBs). 
+
+
+
 
