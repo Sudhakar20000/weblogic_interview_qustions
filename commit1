@@ -472,3 +472,7 @@ USER_MEM_ARGS="-Xms512m -Xmx4096m -XX:MaxPermSize=4096m"
 export USER_MEM_ARGS
 fi
 
+
+Interview Questions sits:
+=========================
+https://www.scribd.com/doc/44976561/Weblogic-Interview-Questions
