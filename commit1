@@ -454,6 +454,7 @@ JDBC is a low-level interface, which means that you use it to invoke (or call) S
 which to build higher-level interfaces and tools, such as Java Message Service (JMS) and Enterprise Java Beans (EJBs). 
 
 HEAP SIZE INCREASIN FROM CLI
+============================
 go to setDomainEnv.sh and open it
 Search for this comment line: 
 # IF USER_MEM_ARGS the environment variable is set, use it to override ALL MEM_ARGS values
@@ -471,6 +472,11 @@ if [ "${SERVER_NAME}" == "osb_server1" ] ; then
 USER_MEM_ARGS="-Xms512m -Xmx4096m -XX:MaxPermSize=4096m"
 export USER_MEM_ARGS
 fi
+
+CHECKING WEBLOGIC VERSION IN CLI
+================================
+# cd /home/oracle/Oracle/Middleware/Oracle_Home/wlserver/server/lib 
+java -cp weblogic.jar weblogic.version
 
 
 Interview Questions sits:
