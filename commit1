@@ -478,6 +478,10 @@ CHECKING WEBLOGIC VERSION IN CLI
 # cd /home/oracle/Oracle/Middleware/Oracle_Home/wlserver/server/lib 
 java -cp weblogic.jar weblogic.version
 
+OPATHING LINK:
+==============
+
+https://ivrsuresh.wordpress.com/2019/09/25/how-to-apply-patch-to-weblogic-12c-home-using-opatch-utility/
 
 Interview Questions sits:
 =========================
